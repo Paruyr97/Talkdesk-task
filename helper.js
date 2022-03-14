@@ -4,10 +4,6 @@ const getPageData = (data, page) => {
     return data.slice(page * pagesCount - pagesCount, page * pagesCount);
 }
 
-const filterDataBySearch = (data, value) => {
-    return data.filter(({ name }) => name.toLowerCase().includes(value));
-}
-
 const sortCategories = (data) => {
     let allCategories = [];
 
@@ -36,7 +32,6 @@ const sortBySumOfPrices = (data) => {
 
 module.exports = {
     getPageData,
-    filterDataBySearch,
     sortCategories,
     filterDataByCategory,
     sortBySumOfPrices,
