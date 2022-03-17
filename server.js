@@ -1,16 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-
+const { data } = require("./data.js");
+const { pagesCount, PORT } = require("./constants.js");
 const {
   getPageData,
   sortCategories,
   filterDataByCategory,
   sortBySumOfPrices,
 } = require("./helper.js");
-const { data } = require("./data.js");
-const { pagesCount } = require("./constants.js");
 
-const PORT = 5000;
 const app = express();
 
 app.use(express.json());
