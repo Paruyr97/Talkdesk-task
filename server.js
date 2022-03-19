@@ -25,7 +25,7 @@ app.get("/categories", (req, res) => {
 app.get("/:page", (req, res) => {
   res.json({
     data: sortBySumOfPrices(getPageData(data, Number(req.params.page))),
-    dataLength: Math.ceil(data.length / pagesCount),
+    pagesCount: Math.ceil(data.length / pagesCount),
   });
 });
 
@@ -33,4 +33,4 @@ app.get("/category/:category", (req, res) => {
   res.json(sortBySumOfPrices(filterDataByCategory(data, req.params.category)));
 });
 
-app.listen(PORT, () => console.log(`server runs on port ${PORT}`));
+app.listen(PORT, () => console.log(`server runs on ${PORT} port`));
